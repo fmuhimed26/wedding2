@@ -63,7 +63,7 @@ img{ display:block; max-width:100%; }
 a{ color:inherit; text-decoration:none; }
 
 /* =====================================================
-   الخلفية الحيّة — أورورا + أجرام عائمة + نجوم + توهج
+   الخلفية الحيّة
 ===================================================== */
 #scene{
   position:fixed;
@@ -77,9 +77,6 @@ a{ color:inherit; text-decoration:none; }
     radial-gradient(circle at 50% 45%, #16224a 0%, #0a1128 50%, #050a18 100%);
 }
 
-/* =====================================================
-   الأورورا الأولى (زرقاء متحركة)
-===================================================== */
 .aurora{
   position:absolute;
   inset:-20%;
@@ -108,9 +105,6 @@ a{ color:inherit; text-decoration:none; }
   will-change:transform;
 }
 
-/* =====================================================
-   أجرام سماوية متوهجة عائمة
-===================================================== */
 .orb{
   position:absolute;
   border-radius:50%;
@@ -148,9 +142,6 @@ a{ color:inherit; text-decoration:none; }
   animation:orbFloat1 25s ease-in-out infinite reverse, orbPulse 8s ease-in-out infinite .8s;
 }
 
-/* =====================================================
-   أشعة ضوئية دوّارة (GoBos)
-===================================================== */
 .light-rays{
   position:absolute;
   inset:-50%;
@@ -177,9 +168,6 @@ a{ color:inherit; text-decoration:none; }
   animation:raysRotate 60s linear infinite;
 }
 
-/* =====================================================
-   طبقة النجوم المتلألئة
-===================================================== */
 .stars{
   position:absolute;
   inset:0;
@@ -222,9 +210,6 @@ a{ color:inherit; text-decoration:none; }
   animation:starsDrift 70s linear infinite reverse, starsTwinkle 5s ease-in-out infinite alternate .8s;
 }
 
-/* =====================================================
-   توهج مركزي نابض
-===================================================== */
 .center-glow{
   position:absolute;
   top:50%; left:50%;
@@ -240,9 +225,6 @@ a{ color:inherit; text-decoration:none; }
   animation:centerPulse 8s ease-in-out infinite;
 }
 
-/* =====================================================
-   طبقة الضباب السفلي المتحرك
-===================================================== */
 .fog{
   position:absolute;
   bottom:-20%;
@@ -258,9 +240,6 @@ a{ color:inherit; text-decoration:none; }
   animation:fogDrift 35s ease-in-out infinite;
 }
 
-/* =====================================================
-   إطار داخلي رقيق
-===================================================== */
 .scene-frame{
   position:absolute;
   inset:14px;
@@ -270,9 +249,6 @@ a{ color:inherit; text-decoration:none; }
   border-radius:2px;
 }
 
-/* =====================================================
-   غبار متلألئ صاعد
-===================================================== */
 .dust{
   position:absolute;
   inset:0;
@@ -311,91 +287,73 @@ a{ color:inherit; text-decoration:none; }
   33%{ transform:translate3d(8%, -5%, 0) scale(1.12); }
   66%{ transform:translate3d(-6%, 6%, 0) scale(.95); }
 }
-
 @keyframes auroraFloat2{
   0%,100%{ transform:translate3d(0,0,0) scale(1.05); }
   50%{ transform:translate3d(-10%, -8%, 0) scale(1.2); }
 }
-
 @keyframes orbFloat1{
   0%,100%{ transform:translate3d(0,0,0); }
   50%{ transform:translate3d(60px, -50px, 0); }
 }
-
 @keyframes orbFloat2{
   0%,100%{ transform:translate3d(0,0,0); }
   50%{ transform:translate3d(-70px, -40px, 0); }
 }
-
 @keyframes orbFloat3{
   0%,100%{ transform:translate3d(0,0,0); }
   50%{ transform:translate3d(50px, 60px, 0); }
 }
-
 @keyframes orbPulse{
   0%,100%{ opacity:.65; transform:scale(1); }
   50%{ opacity:1; transform:scale(1.12); }
 }
-
 @keyframes raysRotate{
   to{ transform:rotate(360deg); }
 }
-
 @keyframes starsDrift{
   to{ transform:translate3d(-30px, -40px, 0); }
 }
-
 @keyframes starsTwinkle{
   0%{ opacity:.5; }
   100%{ opacity:1; }
 }
-
 @keyframes centerPulse{
   0%,100%{ opacity:.55; transform:translate(-50%,-50%) scale(1); }
   50%{ opacity:1; transform:translate(-50%,-50%) scale(1.18); }
 }
-
 @keyframes fogDrift{
   0%,100%{ transform:translate3d(0,0,0); }
   50%{ transform:translate3d(-30px, -20px, 0); }
 }
-
 @keyframes floatDust{
   0%{ transform:translate3d(0,20px,0); opacity:0; }
   15%{ opacity:.7; }
   85%{ opacity:.6; }
   100%{ transform:translate3d(40px,-140px,0); opacity:0; }
 }
-
 @keyframes shimmer{
   0%{ background-position:200% center; }
   100%{ background-position:-200% center; }
 }
-
 @keyframes pulse{
   50%{ box-shadow:0 0 25px rgba(232,180,168,.35); }
 }
-
 @keyframes appear{
   from{ opacity:0; transform:translateY(16px) scale(.98); }
   to{ opacity:1; transform:none; }
 }
-
 @keyframes contentIn{
   from{ opacity:0; transform:translateY(20px); }
   to{ opacity:1; transform:none; }
 }
-
 @keyframes twinkle{
   0%,100%{ opacity:.2; transform:scale(.8); }
   50%{ opacity:1; transform:scale(1.3); }
 }
-
 @keyframes crestGlow{
   0%,100%{ filter:drop-shadow(0 0 20px rgba(232,180,168,.5)); }
   50%{ filter:drop-shadow(0 0 36px rgba(232,180,168,.95)); }
 }
-
 @keyframes floatUp{
   0%,100%{ transform:translateY(0); }
   50%{ transform:translateY(-6px); }
@@ -500,9 +458,6 @@ a{ color:inherit; text-decoration:none; }
     radial-gradient(circle at 100% 100%, rgba(232,180,168,.4) 0, transparent 6px);
 }
 
-/* =====================================================
-   الشعار الجديد — ميدالية عربية
-===================================================== */
 .crest-wrap{
   width:170px;
   height:170px;
@@ -1480,50 +1435,441 @@ select option{ background:#0a1128; color:var(--cream); }
 .page.active .panel > *:nth-child(5){ animation-delay:.32s; }
 .page.active .panel > *:nth-child(6){ animation-delay:.40s; }
 
-/* موبايل */
+/* =====================================================
+   موبايل — كل شيء مصغّر + بلا تمرير
+===================================================== */
 @media(max-width:700px){
-  .page{
-    padding:14px 12px calc(108px + env(safe-area-inset-bottom));
+
+  html, body{
+    overflow:hidden;
+    height:100%;
+    width:100%;
+    position:fixed;
   }
 
-  .page-inner{ min-height:calc(100svh - 130px); }
+  .aurora,
+  .aurora-2,
+  .orb,
+  .center-glow,
+  .fog{
+    will-change:auto;
+  }
 
-  .panel{ padding:28px 18px; }
+  .light-rays{
+    opacity:.12;
+    filter:blur(30px);
+  }
+  .aurora, .aurora-2{
+    filter:blur(55px);
+  }
+  .center-glow{
+    width:60vmin;
+    height:60vmin;
+    filter:blur(24px);
+  }
+  .fog{
+    filter:blur(40px);
+  }
 
-  .entry-card{ padding:34px 20px 28px; }
-  .entry-card p{ font-size:1.02rem; }
-  .entry-card h1{ font-size:2.1rem; }
-  .crest-wrap{ width:140px; height:140px; margin-bottom:16px; }
+  .orb-1{ width:180px; height:180px; }
+  .orb-2{ width:150px; height:150px; }
+  .orb-3{ width:120px; height:120px; }
+  .orb-4{ width:90px;  height:90px;  }
+  .orb{ filter:blur(5px); }
 
-  .date-layout{ grid-template-columns:1fr; gap:20px; }
-  .date-card .day{ font-size:3.6rem; }
+  .dust i{
+    width:2px;
+    height:2px;
+    animation-duration:14s !important;
+  }
 
-  .info-grid{ grid-template-columns:1fr 1fr; }
-  .choice-grid{ grid-template-columns:1fr; }
-  .radio-grid{ grid-template-columns:1fr; }
+  .page{
+    padding:8px 8px calc(66px + env(safe-area-inset-bottom));
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
 
-  .countdown{ gap:6px; }
-  .count-num{ font-size:1.35rem; }
-  .count-label{ font-size:.72rem; }
+  .page-inner{
+    min-height:0;
+    max-height:calc(100svh - 82px);
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
 
-  .names{ gap:14px; }
-  .name{ font-size:2.5rem; }
-  .amp{ font-size:2.2rem; }
+  .panel{
+    padding:14px 12px;
+    width:100%;
+    max-height:calc(100svh - 82px);
+    overflow:hidden;
+    border-radius:3px;
+  }
 
-  h2{ font-size:2rem; }
-  .lead{ font-size:1.02rem; line-height:1.9; }
+  #entry{
+    padding:8px;
+  }
 
-  .nav-btn{ width:44px; height:42px; }
-  .progress{ height:42px; gap:6px; }
+  .entry-card{
+    padding:18px 14px 16px;
+    max-height:calc(100svh - 16px);
+    overflow:hidden;
+  }
 
-  .page-number{ top:14px; right:12px; padding:5px 11px; font-size:.72rem; }
-  .music{ top:14px; left:12px; width:42px; height:42px; }
+  .crest-wrap{
+    width:88px;
+    height:88px;
+    margin-bottom:6px;
+  }
 
-  .final-mark{ width:130px; height:130px; }
+  .kicker{
+    font-size:.82rem;
+    letter-spacing:.5px;
+  }
 
-  /* أداء أفضل على الجوال */
-  .light-rays{ opacity:.22; }
-  .orb-1, .orb-2, .orb-3, .orb-4{ filter:blur(4px); }
+  .entry-card h1{
+    font-size:1.5rem;
+    margin:3px 0 6px;
+  }
+
+  .entry-sub{
+    margin-bottom:8px;
+    width:160px;
+  }
+
+  .entry-sub span{
+    font-size:.62rem;
+    letter-spacing:3px;
+  }
+
+  .entry-card p{
+    font-size:.82rem;
+    line-height:1.55;
+    margin-bottom:12px;
+  }
+
+  .gold-btn{
+    padding:9px 20px;
+    font-size:.82rem;
+    gap:6px;
+  }
+
+  .eyebrow{
+    font-size:.6rem;
+    letter-spacing:1.8px;
+    margin-bottom:5px;
+  }
+
+  h2{
+    font-size:1.4rem;
+    line-height:1.18;
+  }
+
+  h3{
+    font-size:.98rem;
+    line-height:1.4;
+  }
+
+  .lead{
+    font-size:.82rem;
+    line-height:1.55;
+    margin:6px auto 10px;
+  }
+
+  .subtle{
+    font-size:.68rem;
+    line-height:1.5;
+  }
+
+  .divider{
+    margin:8px auto;
+    width:55%;
+  }
+
+  .ornament{
+    margin-bottom:6px;
+    font-size:.82rem;
+    gap:8px;
+  }
+
+  .ornament::before,
+  .ornament::after{
+    width:28px;
+  }
+
+  .names{
+    gap:8px;
+    margin:8px 0 4px;
+  }
+
+  .name{
+    font-size:1.7rem;
+  }
+
+  .amp{
+    font-size:1.35rem;
+  }
+
+  .little-note{
+    padding:5px 12px;
+    font-size:.74rem;
+  }
+
+  .date-layout{
+    grid-template-columns:1fr;
+    gap:8px;
+    margin-top:8px;
+  }
+
+  .date-card{
+    padding:10px 10px;
+  }
+
+  .date-card::before,
+  .date-card::after{
+    width:10px;
+    height:10px;
+  }
+
+  .date-card .day{
+    font-size:2rem;
+  }
+
+  .date-card .month{
+    font-size:.82rem;
+    margin:2px 0;
+  }
+
+  .date-card .time{
+    font-size:.78rem;
+  }
+
+  .countdown{
+    gap:4px;
+    margin:8px 0;
+  }
+
+  .count-box{
+    padding:6px 2px;
+  }
+
+  .count-num{
+    font-size:.92rem;
+    line-height:1.1;
+  }
+
+  .count-label{
+    font-size:.55rem;
+  }
+
+  .ghost-btn{
+    padding:7px 12px;
+    font-size:.72rem;
+    gap:4px;
+  }
+
+  .info-grid{
+    gap:5px;
+    margin-top:8px;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .info-item{
+    padding:8px 5px;
+  }
+
+  .info-icon{
+    font-size:1.05rem;
+    margin-bottom:2px;
+    min-height:1.05em;
+  }
+
+  .info-title{
+    font-size:.78rem;
+  }
+
+  .info-extra{
+    font-size:.68rem;
+    margin-top:2px;
+    min-height:18px;
+    line-height:1.4;
+  }
+
+  .map-wrap{
+    margin-top:8px;
+    gap:8px;
+  }
+
+  .map-box{
+    height:min(38vh, 220px);
+  }
+
+  .map-actions{
+    gap:6px;
+  }
+
+  .choice-grid{
+    grid-template-columns:1fr;
+    gap:5px;
+    margin:8px 0;
+  }
+
+  .choice{
+    padding:8px 8px;
+  }
+
+  .choice .big{
+    font-size:1.1rem;
+    margin-bottom:2px;
+    min-height:1.1em;
+    line-height:1.1em;
+  }
+
+  .choice span:last-child{
+    font-size:.78rem;
+  }
+
+  .choice-result{
+    font-size:.78rem;
+    min-height:38px;
+    padding:6px 8px;
+    line-height:1.4;
+  }
+
+  .form-switch{
+    margin:8px 0;
+    gap:5px;
+  }
+
+  .tab-btn{
+    padding:6px 12px;
+    font-size:.72rem;
+    gap:4px;
+  }
+
+  .form{
+    gap:5px;
+  }
+
+  label{
+    font-size:.78rem;
+  }
+
+  input,
+  textarea,
+  select{
+    padding:7px 9px;
+    font-size:.8rem;
+    border-radius:2px;
+  }
+
+  textarea{
+    min-height:60px;
+  }
+
+  .radio-grid{
+    gap:5px;
+    margin:8px 0;
+  }
+
+  .radio-card span{
+    padding:9px 6px;
+    font-size:.78rem;
+  }
+
+  .warning{
+    padding:6px 8px;
+    font-size:.68rem;
+    line-height:1.5;
+    margin-top:4px;
+  }
+
+  .result{
+    padding:14px 12px;
+    font-size:.82rem;
+    line-height:1.65;
+  }
+
+  .final-panel{
+    padding:16px 12px !important;
+  }
+
+  .final-mark{
+    width:80px;
+    height:80px;
+    margin-bottom:8px;
+  }
+
+  .footer{
+    margin-top:12px;
+    padding-top:8px;
+    font-size:.68rem;
+    line-height:1.65;
+  }
+
+  #nav{
+    padding:5px 8px calc(5px + env(safe-area-inset-bottom));
+  }
+
+  .nav-inner{
+    gap:5px;
+  }
+
+  .nav-btn{
+    width:34px;
+    height:32px;
+    font-size:.78rem;
+    border-radius:2px;
+  }
+
+  .progress{
+    height:32px;
+    gap:4px;
+    padding:0 8px;
+    border-radius:2px;
+  }
+
+  .dot{
+    width:4px;
+    height:4px;
+  }
+
+  .dot.active{
+    width:12px;
+  }
+
+  .page-number{
+    top:8px;
+    right:8px;
+    padding:3px 8px;
+    font-size:.58rem;
+    letter-spacing:.5px;
+  }
+
+  .music{
+    top:8px;
+    left:8px;
+    width:32px;
+    height:32px;
+    font-size:.78rem;
+  }
+
+  img.emoji{
+    width:1em;
+    height:1em;
+  }
+}
+
+@media(max-width:380px){
+  .entry-card h1{ font-size:1.3rem; }
+  .name{ font-size:1.5rem; }
+  .amp{ font-size:1.2rem; }
+  h2{ font-size:1.25rem; }
+  .date-card .day{ font-size:1.7rem; }
+  .count-num{ font-size:.82rem; }
+  .crest-wrap{ width:76px; height:76px; }
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -1543,41 +1889,33 @@ select option{ background:#0a1128; color:var(--cream); }
      الخلفية الحيّة
 ===================================================== -->
 <div id="scene" aria-hidden="true">
-
-  <!-- الأورورا المتحركة -->
   <div class="aurora"></div>
   <div class="aurora-2"></div>
-
-  <!-- الأشعة الدوّارة -->
   <div class="light-rays"></div>
-
-  <!-- النجوم -->
   <div class="stars"></div>
   <div class="stars-2"></div>
-
-  <!-- التوهج المركزي النابض -->
   <div class="center-glow"></div>
-
-  <!-- الضباب السفلي -->
   <div class="fog"></div>
-
-  <!-- الأجرام السماوية العائمة -->
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
   <div class="orb orb-4"></div>
-
-  <!-- الإطار الداخلي -->
   <div class="scene-frame"></div>
-
-  <!-- الغبار الصاعد -->
   <div class="dust">
     <i></i><i></i><i></i><i></i><i></i>
     <i></i><i></i><i></i><i></i><i></i>
   </div>
 </div>
 
-<audio id="bgMusic" loop preload="none" playsinline>
+<!-- =====================================================
+     الأغنية — بدون crossorigin (السبب كان هنا!)
+===================================================== -->
+<audio
+  id="bgMusic"
+  loop
+  preload="auto"
+  playsinline
+>
   <source src="wedding.mp3" type="audio/mpeg">
 </audio>
 
@@ -1596,7 +1934,6 @@ select option{ background:#0a1128; color:var(--cream); }
 
   <div class="entry-card">
 
-    <!-- الشعار الجديد — ميدالية عربية -->
     <div class="crest-wrap">
       <svg class="crest-svg" viewBox="0 0 220 220" aria-hidden="true">
         <defs>
@@ -1999,7 +2336,6 @@ select option{ background:#0a1128; color:var(--cream); }
     <div class="page-inner">
       <div class="panel final-panel center">
 
-        <!-- نفس شعار الميدالية بحجم أصغر -->
         <div class="final-mark">
           <svg viewBox="0 0 200 200" aria-hidden="true">
             <defs>
@@ -2239,19 +2575,45 @@ function startInvitation(){
 openBtn.addEventListener('click', startInvitation);
 
 /* =====================================================
-   الموسيقى
+   الموسيقى — نسخة مبسطة ومضمونة
 ===================================================== */
+
+/* تحميل مسبق آمن */
+window.addEventListener('load', () => {
+  try { music.load(); } catch(e){}
+});
+
 function startMusic(){
-  music.volume = .62;
-  music.play()
-    .then(() => {
-      setMusicIcon(true);
-      musicToggle.classList.add('playing');
-    })
-    .catch(() => {
-      setMusicIcon(false);
-      musicToggle.classList.remove('playing');
-    });
+  music.volume = 0;
+
+  const playPromise = music.play();
+
+  if(playPromise !== undefined){
+    playPromise
+      .then(() => {
+        setMusicIcon(true);
+        musicToggle.classList.add('playing');
+
+        /* رفع الصوت تدريجيًا */
+        let vol = 0;
+        const targetVol = 0.62;
+        const step = () => {
+          vol += 0.03;
+          if(vol >= targetVol){
+            music.volume = targetVol;
+            return;
+          }
+          music.volume = vol;
+          requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      })
+      .catch((err) => {
+        console.warn('تعذّر تشغيل الموسيقى:', err);
+        setMusicIcon(false);
+        musicToggle.classList.remove('playing');
+      });
+  }
 }
 
 musicToggle.addEventListener('click', () => {
